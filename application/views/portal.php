@@ -38,17 +38,6 @@
 
 <body>
     <!--::header part start::-->
-    <!-- <header class="main_menu home_menu">
-        <div class="search_input" id="search_input_box">
-            <div class="container ">
-                <form class="d-flex justify-content-between search-inner">
-                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                    <button type="submit" class="btn"></button>
-                    <span class="ti-close" id="close_search" title="Close Search"></span>
-                </form>
-            </div>
-        </div>
-    </header> -->
     <!-- Header part end-->
 
     <!-- banner part start-->
@@ -71,7 +60,8 @@
                                     <button  class="btn btn-outline-warning btn btn-warning">Search</button>
                                 </form>
                             </div>
-
+                            <br></br>
+                            <a class="btn btn-primary" href="<?= base_url()?>index.php/Welcome/login" role="button">Login</a>
                         </div>
                     </div>
                 </div>
@@ -97,7 +87,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title">Historycal Status</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -108,7 +98,8 @@
                 <tr>
                     <th>No</th>
                     <th>Status</th>
-                    <th>Tanggal</th>
+                    <th>Hari</th>
+                    <th>Tanggal & Jam</th>
                 </tr>
             </thead>
             <tbody>
@@ -187,8 +178,8 @@
                         <td>
                             <a href="#" onclick=showModal(${data.id_order});>${data.no_do}</a>
                         </td>
-                        <td>${data.nama_cusstomer}</td>
-                        <td>${data.nama_driver}</td>
+                        <td>${data.nama_pengirim}</td>
+                        <td>${data.jenis_kapal}</td>
                         <td>${data.no_kendaraan}</td>
                         <td>${data.tanggal_selesai_order}</td>
                     </tr>
@@ -201,8 +192,8 @@
                         <tr>
                             <td>No</td>
                             <td>No Do</td>
-                            <td>Customer</td>
-                            <td>Driver</td>
+                            <td>Nama Pengirim</td>
+                            <td>Jenis Kapal</td>
                             <td>No Kendaraan</td>
                             <td>Tanggal Tiba</td>
                         </tr>
@@ -236,6 +227,7 @@
                     <tr>
                         <td>${no+1}</td>
                         <td>${data.status}</td>
+                        <td>${new Date()}</td>
                         <td>${data.tgl_update}</td>
                     </tr>
                     `
